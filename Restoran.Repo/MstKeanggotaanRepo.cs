@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Restoran.Model;
 using Restoran.ViewModel;
-
+using System.Data.Entity;
 
 namespace Restoran.Repo
 {
@@ -13,6 +13,7 @@ namespace Restoran.Repo
     {
         public List<MstKeanggotaanViewModel> GetAll()
         {
+
             List<MstKeanggotaanViewModel> result = new List<MstKeanggotaanViewModel>();
             using (DataContext context = new DataContext())
             {
@@ -103,5 +104,42 @@ namespace Restoran.Repo
             }
         }
 
+        DataContext context = new DataContext();
+        public MstKeanggotaan GetByID(int id)
+        {
+            var vKeanggotaan = new MstKeanggotaan();
+            vKeanggotaan = context.mstKeanggotaan.Where(x => x.ID == id).FirstOrDefault();
+            return vKeanggotaan;
+
+        }
+
+        public bool Edit(MstKeanggotaan model)
+        {
+            bool result = true;
+
+            MstKeanggotaan mdlKeanggotaan = new MstKeanggotaan();
+            mdlKeanggotaan = context.mstKeanggotaan.Where(x => x.ID == model.ID).FirstOrDefault();
+            mdlKeanggotaan.KodeKeanggotaan = model.KodeKeanggotaan;
+            mdlKeanggotaan.KodeTipeKeanggotaan = model.KodeTipeKeanggotaan;
+            mdlKeanggotaan.NomerIdentitas = model.NomerIdentitas;
+            mdlKeanggotaan.NamaLengkap = model.NamaLengkap;
+            mdlKeanggotaan.Alamat = model.Alamat;
+            mdlKeanggotaan.NomerHandphone = model.NomerHandphone;
+            mdlKeanggotaan.Email = model.Email;
+
+            context.Entry(mdlKeanggotaan).State = EntityState.Modified;
+            try
+            {
+                context.SaveChanges();
+                return result;
+            }
+            catch (Exception)
+            {
+                result = false;
+                return result;
+            }
+
+
+        }
     }
 }

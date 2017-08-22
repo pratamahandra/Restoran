@@ -39,7 +39,7 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                <button type="button" class=" btn btn-success">
+                <button type="button" class=" btn btn-success editDataPegawai" dataid=@item.ID>
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
                 <button type="button" class=" btn btn-info">
@@ -89,6 +89,25 @@
                 $("#idTablePegawai").html(model);
             },
             error: function (model) {
+            }
+        });
+    });
+
+    $(".editDataPegawai").click(function () {
+        debugger;
+        var vIDPegawai = $(this).attr("dataId");
+        $.ajax({
+            url: "/Pegawai/Edit",
+            data: { ID: vIDPegawai },
+            type: "GET",
+            success: function (model) {
+                debugger;
+                $("#idModalBodyEditPegawai").html(model);
+                $("#idModalEditPegawai").modal("show");
+            },
+            error: function (model) {
+                debugger;
+
             }
         });
     });

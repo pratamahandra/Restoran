@@ -18,3 +18,13 @@ D:\MiniProject\Restoran\Restoran.Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\MiniProject\Restoran\Restoran.Model\obj\Debug\Restoran.Model.csprojResolveAssemblyReference.cache
 D:\MiniProject\Restoran\Restoran.Model\obj\Debug\Restoran.Model.dll
 D:\MiniProject\Restoran\Restoran.Model\obj\Debug\Restoran.Model.pdb
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\Restoran.Model.dll.config
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\Restoran.Model.dll
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\Restoran.Model.pdb
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\EntityFramework.dll
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\EntityFramework.xml
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\obj\Debug\Restoran.Model.csprojResolveAssemblyReference.cache
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\obj\Debug\Restoran.Model.dll
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Model\obj\Debug\Restoran.Model.pdb

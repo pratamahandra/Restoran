@@ -1,26 +1,20 @@
-﻿@model Restoran.ViewModel.MstDaftarMenuViewModel
+﻿@model Restoran.Model.MstDaftarMenu
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "idFormDaftarMenu" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "idFormEditDaftarMenu" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>MstDaftarMenuViewModel</h4>
+        <h4>MstDaftarMenu</h4>
         <hr />
         @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.KodeDaftarMenu, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.KodeDaftarMenu)
-                @Html.ValidationMessageFor(model => model.KodeDaftarMenu)
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.KodeDaftarMenu)
 
         <div class="form-group">
             @Html.LabelFor(model => model.KodeKategoriMenu, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.KodeKategoriMenu)*@
                 @Html.DropDownListFor(model => model.KodeKategoriMenu, (IEnumerable<SelectListItem>)ViewBag.ListKategoriMenu, "Pilih Kategori Menu", new { @class = "from-control" })
                 @Html.ValidationMessageFor(model => model.KodeKategoriMenu)
             </div>
@@ -43,16 +37,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.status, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.status)
-                @Html.ValidationMessageFor(model => model.status)
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -61,7 +55,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
