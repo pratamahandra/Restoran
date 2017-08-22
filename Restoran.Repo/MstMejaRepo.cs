@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Restoran.Model;
 using Restoran.ViewModel;
+using System.Data.Entity;
 
 namespace Restoran.Repo
 {
@@ -93,6 +94,41 @@ namespace Restoran.Repo
                     return false;
                 }
             }
+        }
+
+        DataContext context = new DataContext();
+        public MstMeja GetByID(int id)
+        {
+            var vMeja = new MstMeja();
+            vMeja = context.mstMeja.Where(x => x.ID == id).FirstOrDefault();
+            return vMeja;
+
+        }
+
+        public bool Edit(MstMeja model)
+        {
+            bool result = true;
+
+            MstMeja mdlMeja = new MstMeja();
+            mdlMeja = context.mstMeja.Where(x => x.ID == model.ID).FirstOrDefault();
+
+            mdlMeja.KodeMeja = model.KodeMeja;
+            mdlMeja.KodeTipeRuangan = model.KodeTipeRuangan;
+            mdlMeja.NomerMeja = model.NomerMeja;
+            mdlMeja.Status = model.Status;
+
+            context.Entry(mdlMeja).State = EntityState.Modified;
+            try
+            {
+                context.SaveChanges();
+                return result;
+            }
+            catch (Exception)
+            {
+                result = false;
+                return result;
+            }
+
         }
     }
 }

@@ -24,3 +24,16 @@ D:\MiniProject\Restoran\Restoran.Repo\bin\Debug\EntityFramework.SqlServer.xml
 D:\MiniProject\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.csprojResolveAssemblyReference.cache
 D:\MiniProject\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.dll
 D:\MiniProject\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.pdb
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\Restoran.Repo.dll
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\Restoran.Repo.pdb
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\EntityFramework.dll
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\Restoran.Model.dll
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\Restoran.ViewModel.dll
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\Restoran.Model.pdb
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\Restoran.ViewModel.pdb
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\EntityFramework.xml
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.csprojResolveAssemblyReference.cache
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.dll
+C:\Users\TEBE\Pictures\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.pdb
