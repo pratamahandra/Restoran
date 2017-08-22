@@ -85,13 +85,32 @@
 
     $("#idBtnSaveDaftarMenu").click(function () {
         var vFormDaftarMenu= $("#idFormDaftarMenu").serialize();
+        var vNamaMenu = $("#NamaMenu").val();
+        var vHarga = $("#Harga").val();
         var vStatus = $("#Status").val();
+        var vKodeDaftarMenu = $("#KodeDaftarMenu").val();
+        var vKodeKategoriMenu = $("#KodeKategoriMenu").val();
+
+        if (vKodeDaftarMenu == "") {
+            $("#idValidasiKodeDaftarMenu").css({ display: "block" });
+            $("#KodeDaftarMenu").css({ borderColor: "red" });
+        }
+        if (vKodeKategoriMenu == "") {
+            $("#idValidasiKodeKategoriMenu").css({ display: "block" });
+            $("#KodeKategoriMenu").css({ borderColor: "red" });
+        }
+        if (vNamaMenu == "") {
+            $("#idValidasiNamaMenu").css({ display: "block" });
+            $("#NamaMenu").css({ borderColor: "red" });
+        }
+        if (vHarga == "") {
+            $("#idValidasiHarga").css({ display: "block" });
+            $("#Harga").css({ borderColor: "red" });
+        }
         if (vStatus == "") {
-            debugger;
             $("#idValidasiStatus").css({ display: "block" });
             $("#Status").css({ borderColor: "red" });
         }
-
         else {
             $.ajax({
                 url: "/DaftarMenu/Create",
@@ -102,6 +121,9 @@
                         alert("Selamat Berhasil Di Simpan");
                         $("#idModalCreateDaftarMenu").modal("hide");
                         window.location.href = "/DaftarMenu/Index";
+                    }
+                    if (model.Pesan == "Ada") {
+                        alert("Kode Daftar Menu Sydah Ada");                                              
                     }
                 },
                 error: function (model) {
@@ -121,7 +143,7 @@
                     alert("Selamat Berhasil Di Simpan");
                     $("#idModalEditDaftarMenu").modal("hide");
                     window.location.href = "/DaftarMenu/Index";
-                }
+                }               
             },
             error: function (model) {
             }

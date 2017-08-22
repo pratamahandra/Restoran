@@ -31,6 +31,33 @@ namespace Restoran.Repo
             }
             return result;
         }
+
+        public bool CekKode(MstDaftarMenuViewModel model)
+        {
+            bool cek = false;
+            List<MstDaftarMenuViewModel> result = new List<MstDaftarMenuViewModel>();
+            using (DataContext context = new DataContext())
+            {
+                result = (from mstk in context.mstDaftarMenu
+                          where mstk.KodeDaftarMenu.ToLower().Contains(model.KodeDaftarMenu.ToLower())
+                          select new MstDaftarMenuViewModel
+                          {
+                              ID = mstk.ID,
+                              KodeDaftarMenu = mstk.KodeDaftarMenu,
+                              KodeKategoriMenu = mstk.KodeKategoriMenu,
+                              NamaMenu = mstk.NamaMenu,
+                              Harga = mstk.Harga,
+                              Status = mstk.Status,
+                          }
+                ).ToList();
+            }
+            if (result.Count() > 0)
+            {
+                cek = true;
+            }
+            return cek;
+        }
+
         public bool Save(MstDaftarMenuViewModel model)
         {
             bool result = true;

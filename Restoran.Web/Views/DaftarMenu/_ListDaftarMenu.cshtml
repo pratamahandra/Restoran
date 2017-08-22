@@ -6,6 +6,9 @@
 <table class="table" id="idTableDaftarMenu">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.KodeDaftarMenu)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.KodeKategoriMenu)
         </th>
         <th>
@@ -23,6 +26,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodeDaftarMenu)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.KodeKategoriMenu)
             </td>
