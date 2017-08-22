@@ -24,3 +24,16 @@ D:\MiniProject\Restoran\Restoran.Repo\bin\Debug\EntityFramework.SqlServer.xml
 D:\MiniProject\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.csprojResolveAssemblyReference.cache
 D:\MiniProject\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.dll
 D:\MiniProject\Restoran\Restoran.Repo\obj\Debug\Restoran.Repo.pdb
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\Restoran.Repo.dll
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\Restoran.Repo.pdb
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\EntityFramework.dll
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\EntityFramework.SqlServer.dll
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\Restoran.Model.dll
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\Restoran.ViewModel.dll
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\Restoran.Model.pdb
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\Restoran.ViewModel.pdb
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\EntityFramework.xml
+D:\MiniProject\Restoran\Source\Restoran.Repo\bin\Debug\EntityFramework.SqlServer.xml
+D:\MiniProject\Restoran\Source\Restoran.Repo\obj\Debug\Restoran.Repo.csprojResolveAssemblyReference.cache
+D:\MiniProject\Restoran\Source\Restoran.Repo\obj\Debug\Restoran.Repo.dll
+D:\MiniProject\Restoran\Source\Restoran.Repo\obj\Debug\Restoran.Repo.pdb

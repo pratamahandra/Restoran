@@ -82,8 +82,7 @@ namespace Restoran.Repo
 
             }
         }
-        public bool Remove
-           (int id)
+        public bool Remove(int id)
         {
             using (DataContext context = new DataContext())
             {
@@ -99,6 +98,33 @@ namespace Restoran.Repo
                     return false;
                 }
             }
+        }
+
+        public bool ceknamapegawai (string namapegawai)
+        {
+            bool cek = false;
+            List<MstPegawaiViewModel> result = new List<MstPegawaiViewModel>();
+            using (DataContext context = new DataContext())
+            {
+                result = (from mstk in context.mstPegawai
+                          where mstk.NamaLengkap.ToLower().Contains(namapegawai.ToLower())
+                          select new ViewModel.MstPegawaiViewModel
+                          {
+                              ID = mstk.ID,
+                              KodePegawai = mstk.KodePegawai,
+                              NamaLengkap = mstk.NamaLengkap,
+                              JenisKelamin = mstk.JenisKelamin,
+                              Alamat = mstk.Alamat,
+                              Email = mstk.Email,
+                              Status = mstk.Status
+                          }
+                ).ToList();
+            }
+            if (result.Count() > 0)
+            {
+                cek = true;
+            }
+            return cek;
         }
     }
 }

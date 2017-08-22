@@ -18,3 +18,13 @@ D:\MiniProject\Restoran\Restoran.Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\MiniProject\Restoran\Restoran.Model\obj\Debug\Restoran.Model.csprojResolveAssemblyReference.cache
 D:\MiniProject\Restoran\Restoran.Model\obj\Debug\Restoran.Model.dll
 D:\MiniProject\Restoran\Restoran.Model\obj\Debug\Restoran.Model.pdb
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\Restoran.Model.dll.config
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\Restoran.Model.dll
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\Restoran.Model.pdb
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\EntityFramework.dll
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\EntityFramework.xml
+D:\MiniProject\Restoran\Source\Restoran.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\MiniProject\Restoran\Source\Restoran.Model\obj\Debug\Restoran.Model.csprojResolveAssemblyReference.cache
+D:\MiniProject\Restoran\Source\Restoran.Model\obj\Debug\Restoran.Model.dll
+D:\MiniProject\Restoran\Source\Restoran.Model\obj\Debug\Restoran.Model.pdb

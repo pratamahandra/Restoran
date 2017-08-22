@@ -8,3 +8,8 @@ D:\MiniProject\Restoran\Restoran.ViewModel\bin\Debug\Restoran.ViewModel.pdb
 D:\MiniProject\Restoran\Restoran.ViewModel\obj\Debug\Restoran.ViewModel.csprojResolveAssemblyReference.cache
 D:\MiniProject\Restoran\Restoran.ViewModel\obj\Debug\Restoran.ViewModel.dll
 D:\MiniProject\Restoran\Restoran.ViewModel\obj\Debug\Restoran.ViewModel.pdb
+D:\MiniProject\Restoran\Source\Restoran.ViewModel\bin\Debug\Restoran.ViewModel.dll
+D:\MiniProject\Restoran\Source\Restoran.ViewModel\bin\Debug\Restoran.ViewModel.pdb
+D:\MiniProject\Restoran\Source\Restoran.ViewModel\obj\Debug\Restoran.ViewModel.csprojResolveAssemblyReference.cache
+D:\MiniProject\Restoran\Source\Restoran.ViewModel\obj\Debug\Restoran.ViewModel.dll
+D:\MiniProject\Restoran\Source\Restoran.ViewModel\obj\Debug\Restoran.ViewModel.pdb

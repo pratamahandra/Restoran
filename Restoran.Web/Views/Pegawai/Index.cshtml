@@ -79,6 +79,9 @@
                     alert("Selamat Berhasil Di Simpan");
                     $("#idModalCreateKeanggotaan").modal("hide");
                     window.location.href = "/Keanggotaan/Index";
+                } else if (model.Pesan == "Ada") {
+                    debugger;
+                    alert("Data mengandung nama yang sama");
                 }
             },
             error: function (model) {

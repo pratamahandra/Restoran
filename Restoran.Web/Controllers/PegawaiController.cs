@@ -42,18 +42,22 @@ namespace Restoran.Web.Controllers
 
         public ActionResult Create(MstPegawaiViewModel model)
         {
-            //DataSet dsID = Common.ExecuteDataSet("spoMaxIdPegawai");
-            //int intID = dsID.Tables[0].Rows[0].Field<int>("MaksimumID");
-            //model.ID = intID + 1;
             if (ModelState.IsValid)
             {
-                if (serviceRestoran.Save(model))
+                if (serviceRestoran.ceknamapegawai(model.NamaLengkap))
                 {
-                    return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { Pesan = "Ada" }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
-                    return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                    if (serviceRestoran.Save(model))
+                    {
+                        return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                    }
                 }
             }
             return View();
