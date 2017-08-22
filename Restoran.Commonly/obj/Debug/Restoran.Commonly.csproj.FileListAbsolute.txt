@@ -6,3 +6,8 @@ D:\MiniProject\Restoran\Restoran.Commonly\bin\Debug\Restoran.Commonly.dll
 D:\MiniProject\Restoran\Restoran.Commonly\bin\Debug\Restoran.Commonly.pdb
 D:\MiniProject\Restoran\Restoran.Commonly\obj\Debug\Restoran.Commonly.dll
 D:\MiniProject\Restoran\Restoran.Commonly\obj\Debug\Restoran.Commonly.pdb
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Commonly\bin\Debug\Restoran.Commonly.dll
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Commonly\bin\Debug\Restoran.Commonly.pdb
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Commonly\obj\Debug\Restoran.Commonly.csprojResolveAssemblyReference.cache
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Commonly\obj\Debug\Restoran.Commonly.dll
+C:\Users\TEBE\Pictures\Restoran\Souce\Restoran.Commonly\obj\Debug\Restoran.Commonly.pdb

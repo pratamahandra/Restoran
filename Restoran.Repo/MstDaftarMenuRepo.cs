@@ -24,7 +24,7 @@ namespace Restoran.Repo
                               KodeKategoriMenu = mstk.KodeKategoriMenu,
                               NamaMenu = mstk.NamaMenu,
                               Harga = mstk.Harga,
-                              status = mstk.Status,
+                              Status = mstk.Status,
                               
                           }
                 ).ToList();
@@ -43,7 +43,7 @@ namespace Restoran.Repo
                               mdlMenuDaftar.KodeKategoriMenu = model.KodeKategoriMenu;
                               mdlMenuDaftar.NamaMenu = model.NamaMenu;
                               mdlMenuDaftar.Harga = model.Harga;
-                              mdlMenuDaftar.Status = model.status;
+                              mdlMenuDaftar.Status = model.Status;
 
                context.mstDaftarMenu.Add(mdlMenuDaftar);
                 try
@@ -74,7 +74,7 @@ namespace Restoran.Repo
                               KodeKategoriMenu = mstk.KodeKategoriMenu,
                               NamaMenu = mstk.NamaMenu,
                               Harga = mstk.Harga,
-                              status = mstk.Status,
+                              Status = mstk.Status,
                           }
                 ).ToList();
             }

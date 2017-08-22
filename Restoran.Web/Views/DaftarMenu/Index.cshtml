@@ -84,28 +84,32 @@
     });
 
     $("#idBtnSaveDaftarMenu").click(function () {
-        debugger;
         var vFormDaftarMenu= $("#idFormDaftarMenu").serialize();
+        var vStatus = $("#Status").val();
+        if (vStatus == "") {
+            debugger;
+            $("#idValidasiStatus").css({ display: "block" });
+            $("#Status").css({ borderColor: "red" });
+        }
 
-        $.ajax({
-            url: "/DaftarMenu/Create",
-            data: vFormDaftarMenu,
-            type: "POST",
-            success: function (model) {
-                debugger;
-                if (model.Pesan == "Success") {
-                    alert("Selamat Berhasil Di Simpan");
-                    $("#idModalCreateDaftarMenu").modal("hide");
-                    window.location.href = "/DaftarMenu/Index";
+        else {
+            $.ajax({
+                url: "/DaftarMenu/Create",
+                data: vFormDaftarMenu,
+                type: "POST",
+                success: function (model) {
+                    if (model.Pesan == "Success") {
+                        alert("Selamat Berhasil Di Simpan");
+                        $("#idModalCreateDaftarMenu").modal("hide");
+                        window.location.href = "/DaftarMenu/Index";
+                    }
+                },
+                error: function (model) {
                 }
-            },
-            error: function (model) {
-            }
-        });
+            });
+        }
     });
-
     $("#idBtnSaveEditDaftarMenu").click(function () {
-        debugger;
         var vFormEditDaftarMenu = $("#idFormEditDaftarMenu").serialize();
 
         $.ajax({
@@ -113,7 +117,6 @@
             data: vFormEditDaftarMenu,
             type: "POST",
             success: function (model) {
-                debugger;
                 if (model.Pesan == "Success") {
                     alert("Selamat Berhasil Di Simpan");
                     $("#idModalEditDaftarMenu").modal("hide");
