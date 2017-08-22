@@ -14,7 +14,8 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.KodeDaftarMenu)
                 @Html.ValidationMessageFor(model => model.KodeDaftarMenu)
-            </div>
+            <div id="idValidasiKodeDaftarMenu" style="display:none"><span style="color:red">Kode Daftar Menu Tidak Boleh Kosong</span></div>
+            </div>            
         </div>
 
         <div class="form-group">
@@ -23,6 +24,7 @@
                 @*@Html.EditorFor(model => model.KodeKategoriMenu)*@
                 @Html.DropDownListFor(model => model.KodeKategoriMenu, (IEnumerable<SelectListItem>)ViewBag.ListKategoriMenu, "Pilih Kategori Menu", new { @class = "from-control" })
                 @Html.ValidationMessageFor(model => model.KodeKategoriMenu)
+                <div id="idValidasiKodeKategoriMenu" style="display:none"><span style="color:red">Kode Kategori Harus Dipilih</span></div>
             </div>
         </div>
 
@@ -31,6 +33,7 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NamaMenu)
                 @Html.ValidationMessageFor(model => model.NamaMenu)
+                <div id="idValidasiNamaMenu" style="display:none"><span style="color:red">Nama Menu Tidak Boleh Kosong</span></div>
             </div>
         </div>
 
@@ -39,29 +42,71 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Harga)
                 @Html.ValidationMessageFor(model => model.Harga)
+                <div id="idValidasiHarga" style="display:none"><span style="color:red">Harga Tidak Boleh Kosong</span></div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.status, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.status)
-                @Html.ValidationMessageFor(model => model.status)
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
+                <div id="idValidasiStatus" style="display:none"><span style="color:red">Status Tidak Boleh Kosong</span></div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+        </div>       
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $("#KodeDaftarMenu").keyup(function () {
+        var vKodeDaftarMenu = $("#KodeDaftarMenu").val();
+        if (vKodeDaftarMenu) {
+            $("#idValidasiKodeDaftarMenu").css({ display: "none" });
+            $("#KodeDaftarMenu").css({ borderColor: "white" });
+        }
+    });
+    $("#KodeKategoriMenu").change(function () {
+        var vKodeDaftarMenu = $("#KodeDaftarMenu").val();
+        if (vKodeDaftarMenu == "") {
+            $("#idValidasiKodeDaftarMenu").css({ display: "block" });
+            $("#KodeDaftarMenu").css({ borderColor: "red" });
+        }
+        if (vKodeDaftarMenu) {
+            $("#idValidasiKodeKategoriMenu").css({ display: "none" });
+            $("#KodeKategoriMenu").css({ borderColor: "black" });
+        }
+    });
+    $("#NamaMenu").keyup(function () {        
+        var vKodeKategoriMenu = $("#KodeKategoriMenu").val();
+        if (vKodeKategoriMenu == "") {
+            $("#idValidasiKodeKategoriMenu").css({ display: "block" });
+            $("#KodeKategoriMenu").css({ borderColor: "red" });
+        }
+        if (vKodeKategoriMenu) {
+            $("#idValidasiNamaMenu").css({ display: "none" });
+            $("#NamaMenu").css({ borderColor: "white" });
+        }
+    });
+    $("#Harga").keyup(function () {
+        var vNamaMenu = $("#NamaMenu").val();
+        if (vNamaMenu == "") {
+            $("#idValidasiNamaMenu").css({ display: "block" });
+            $("#NamaMenu").css({ borderColor: "red" });
+        }
+        if (vNamaMenu) {
+            $("#idValidasiHarga").css({ display: "none" });
+            $("#Harga").css({ borderColor: "white" });
+        }
+    });
+    $("#Status").keyup(function () {
+        var vHarga = $("#Harga").val();
+        if (vHarga == "") {
+            $("#idValidasiHarga").css({ display: "block" });
+            $("#Harga").css({ borderColor: "red" });
+        }
+        if (vHarga) {
+            $("#idValidasiStatus").css({ display: "none" });
+            $("#Status").css({ borderColor: "white" });
+        }
+    });
+</script>

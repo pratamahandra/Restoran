@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Harga)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.status)
+            @Html.DisplayNameFor(model => model.Status)
         </th>
         <th></th>
     </tr>
@@ -33,7 +33,7 @@
                 @Html.DisplayFor(modelItem => item.Harga)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.status)
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <button type="button" class=" btn btn-success editDaftarMenu" dataid=@item.ID>
@@ -53,7 +53,6 @@
 <script>
     //untuk button deletePegawai
     $(".deleteDaftarMenu").click(function () {
-        debugger;
         alert("Delete");
         var vIDDaftarMenu = $(this).attr("dataId");
         $.ajax({
@@ -89,19 +88,16 @@
         });
     });
     $(".editDaftarMenu").click(function () {
-        debugger;
         var vIDDaftarMenu = $(this).attr("dataId");
         $.ajax({
             url: "/DaftarMenu/Edit",
             data: { ID: vIDDaftarMenu },
             type: "GET",
             success: function (model) {
-                debugger;
                 $("#idModalBodyEditDaftarMenu").html(model);
                 $("#idModalEditDaftarMenu").modal("show");
             },
             error: function (model) {
-                debugger;
 
             }
         });
