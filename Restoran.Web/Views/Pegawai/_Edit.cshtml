@@ -23,7 +23,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.JenisKelamin, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.JenisKelamin)
+                @Html.DropDownListFor(model => model.JenisKelamin,
+                    new SelectList(
+                      new List<Object>
+                      {
+                         new {value = 0, text = "Jenis Kelamin"},
+                         new {value = 1, text = "Laki-laki"},
+                          new {value = 2, text = "Perempuan"},
+                      }, "Value", "Text"
+                    ), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.JenisKelamin)
             </div>
         </div>

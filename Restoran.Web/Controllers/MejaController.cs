@@ -82,6 +82,7 @@ namespace Restoran.Web.Controllers
         public ActionResult Edit(int id)
         {
             var vMeja = serviceMeja.GetByID(id);
+            ViewBag.ListTipeRuangan = new SelectList(serviceTipeRuangan.GetAll(), "KodeTipeRuangan", "JenisRuangan");
             return PartialView("_Edit", vMeja);
         }
 

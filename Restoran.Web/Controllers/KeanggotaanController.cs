@@ -81,6 +81,7 @@ namespace Restoran.Web.Controllers
         public ActionResult Edit(int id)
         {
             var vKeanggotaan = serviceKeanggotaan.GetByID(id);
+            ViewBag.ListTipeKeanggotaan = new SelectList(serviceTipeKeanggotaan.GetAll(), "KodeTipeKeanggotaan", "JenisKeanggotaan");
             return PartialView("_Edit", vKeanggotaan);
         }
 
