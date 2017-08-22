@@ -81,6 +81,7 @@ namespace Restoran.Web.Controllers
         public ActionResult Edit(int id)
         {
             var vDaftarMenu = serviceDaftarMenu.GetByID(id);
+            ViewBag.ListKategoriMenu = new SelectList(serviceKategoriMenu.GetAll(), "KodeKategoriMenu", "NamaKategoriMenu");
             return PartialView("_Edit", vDaftarMenu);
         }
 

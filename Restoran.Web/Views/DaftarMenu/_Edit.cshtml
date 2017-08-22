@@ -15,7 +15,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.KodeKategoriMenu, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.KodeKategoriMenu)
+                @Html.DropDownListFor(model => model.KodeKategoriMenu, (IEnumerable<SelectListItem>)ViewBag.ListKategoriMenu, "Pilih Kategori Menu", new { @class = "from-control" })
                 @Html.ValidationMessageFor(model => model.KodeKategoriMenu)
             </div>
         </div>
