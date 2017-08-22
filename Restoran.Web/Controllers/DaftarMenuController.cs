@@ -42,13 +42,20 @@ namespace Restoran.Web.Controllers
             //model.ID = intID + 1;
             if (ModelState.IsValid)
             {
-                if (serviceDaftarMenu.Save(model))
+                if (serviceDaftarMenu.CekKode(model))
                 {
-                    return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { Pesan = "Ada" }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
-                    return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                    if (serviceDaftarMenu.Save(model))
+                    {
+                        return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                    }
                 }
             }
             return View();
