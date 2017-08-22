@@ -1,0 +1,90 @@
+﻿@*Tempat list*@
+
+<p>
+    <button id="idBtnCreate" type="button" class=" btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create Data
+    </button>
+
+</p>
+
+<br />
+<div class="form-inline col-lg-4 pull-right">
+    <input type="text" id="idSearch" name="search" value="" class="form-control col-lg-10" placeholder="Cari Berdasarkan Nama" />
+    <button type="button" id="idBtnSearch" class=" btn btn-info col-lg-2">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+</div>
+<br />
+<hr />
+
+<div id="idListDataKeanggotaan">
+
+</div>
+
+@*untuk popup create data*@
+<div class="modal fade" tabindex="-1" role="dialog" id="idModalCreateKeanggotaan">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body" id="idModalBodyKeanggotaan">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="idBtnSaveKeanggotaan" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+    //inject view list
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Keanggotaan/GetList",
+            type: "GET",
+            success: function (model) {
+                $("#idListDataKeanggotaan").html(model);
+            }
+        });
+    });
+
+
+    $("#idBtnCreate").click(function () {
+        $.ajax({
+            url: "/Keanggotaan/Create",
+            type: "GET",
+            success: function (model) {
+                $("#idModalBodyKeanggotaan").html(model);
+                $("#idModalCreateKeanggotaan").modal("show");
+            }
+        });
+    });
+    
+    $("#idBtnSaveKeanggotaan").click(function () {
+        debugger;
+        var vFormKeanggotaan = $("#idFormKeanggotaan").serialize();
+
+        $.ajax({
+            url: "/Keanggotaan/Create",
+            data: vFormKeanggotaan,
+            type: "POST",
+            success: function (model) {
+                debugger;
+                if (model.Pesan == "Success") {
+                    alert("Selamat Berhasil Di Simpan");
+                    $("#idModalCreateKeanggotaan").modal("hide");
+                    window.location.href = "/Keanggotaan/Index";
+                }
+            },
+            error: function (model) {
+            }
+        });
+    });
+
+</script>

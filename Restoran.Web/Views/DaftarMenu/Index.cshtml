@@ -1,0 +1,87 @@
+﻿@*Tempat list*@
+<p>
+    <button id="idBtnCreate" type="button" class=" btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create Data
+    </button>
+</p>
+
+<br />
+<div class="form-inline col-lg-4 pull-right">
+    <input type="text" id="idSearch" name="search" value="" class="form-control col-lg-10" placeholder="Cari Berdasarkan Nama" />
+    <button type="button" id="idBtnSearch" class=" btn btn-info col-lg-2">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+</div>
+<br />
+<hr />
+
+<div id="idListDaftarMenu">
+
+</div>
+
+@*untuk popup create data*@
+<div class="modal fade" tabindex="-1" role="dialog" id="idModalCreateDaftarMenu">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body" id="idModalBodyDaftarMenu">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="idBtnSaveDaftarMenu" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+    //inject view list
+    $(document).ready(function () {
+        $.ajax({
+            url: "/DaftarMenu/GetList",
+            type: "GET",
+            success: function (model) {
+                $("#idListDaftarMenu").html(model);
+            }
+        });
+    });
+
+
+    $("#idBtnCreate").click(function () {
+        $.ajax({
+            url: "/DaftarMenu/Create",
+            type: "GET",
+            success: function (model) {
+                $("#idModalBodyDaftarMenu").html(model);
+                $("#idModalCreateDaftarMenu").modal("show");
+            }
+        });
+    });
+
+    $("#idBtnSaveDaftarMenu").click(function () {
+        debugger;
+        var vFormDaftarMenu= $("#idFormDaftarMenu").serialize();
+
+        $.ajax({
+            url: "/DaftarMenu/Create",
+            data: vFormDaftarMenu,
+            type: "POST",
+            success: function (model) {
+                debugger;
+                if (model.Pesan == "Success") {
+                    alert("Selamat Berhasil Di Simpan");
+                    $("#idModalCreateDaftarMenu").modal("hide");
+                    window.location.href = "/DaftarMen/Index";
+                }
+            },
+            error: function (model) {
+            }
+        });
+    });    
+</script>

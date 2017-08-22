@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Restoran.ViewModel.MstKeanggotaanViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table" id="idTableKeanggotaan">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KodeTipeKeanggotaan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomerIdentitas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaLengkap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodeTipeKeanggotaan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomerIdentitas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaLengkap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <button type="button" class=" btn btn-success">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button type="button" class=" btn btn-info">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <button type="button" class="btn btn-danger deleteDataKeanggotaan" dataid=@item.ID>
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<script>
+    //untuk button deletePegawai
+    $(".deleteDataKeanggotaan").click(function () {
+        debugger;
+        alert("Delete");
+        var vIDKeanggotaan = $(this).attr("dataId");
+        $.ajax({
+            url: "/Keanggotaan/Delete",
+            data: { ID: vIDKeanggotaan },
+            type: "POST",
+            success: function (model) {
+                if (model.Pesan == "Success") {
+                    alert("Selamat Data Berhasil Dihapus");
+                    window.location.href = "/Keanggotaan/Index";
+                }
+                else {
+                    alert("Data Gagal DI hapus");
+                    window.location.href = "/Keanggotaan/Index";
+                }
+            },
+            error: function (model) {
+            }
+        });
+    });
+
+    $("#idBtnSearch").click(function () {
+        var vKataKunci = $("#idSearch").val();
+        $.ajax({
+            url: "/Keanggotaan/Search",
+            data: { key: vKataKunci },
+            type: "GET",
+            success: function (model) {
+                $("#idTableKeanggotaan").html(model);
+            },
+            error: function (model) {
+            }
+        });
+    });
+
+</script>

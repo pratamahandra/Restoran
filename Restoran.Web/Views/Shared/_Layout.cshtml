@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@    
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />    
+    <link href="~/Content/Ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="~/dist/css/AdminLTE.css" rel="stylesheet" />
+    <link href="~/dist/css/skins/_all-skins.css" rel="stylesheet" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        @*tampilan atas*@
+        <header class="main-header">
+            @Html.Partial("_Header")
+        </header>
+
+        @*tampilan kiri*@
+        <aside class="main-sidebar">
+            @Html.Partial("_Navbar")
+        </aside>
+        
+        @*tampilan body*@
+        <div class="content-wrapper">
+            <div class="content-header">
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            @Html.Partial("_Footer")
+        </footer>
+    </div>
+
+</body>
+</html>

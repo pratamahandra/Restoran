@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Restoran.ViewModel.MstMejaViewModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="idTableMeja">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KodeMeja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KodeTipeRuangan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomerMeja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodeMeja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodeTipeRuangan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomerMeja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <button type="button" class=" btn btn-success">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button type="button" class=" btn btn-info">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <button type="button" class="btn btn-danger deleteDaftarMeja" dataid=@item.ID>
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script>
+    //untuk button deletePegawai
+    $(".deleteDaftarMeja").click(function () {
+        debugger;
+        alert("Delete");
+        var vIDMeja = $(this).attr("dataId");
+        $.ajax({
+            url: "/Meja/Delete",
+            data: { ID: vIDMeja },
+            type: "POST",
+            success: function (model) {
+                if (model.Pesan == "Success") {
+                    alert("Selamat Data Berhasil Dihapus");
+                    window.location.href = "/Meja/Index";
+                }
+                else {
+                    alert("Data Gagal DI hapus");
+                    window.location.href = "/Meja/Index";
+                }
+            },
+            error: function (model) {
+            }
+        });
+    });
+
+    $("#idBtnSearch").click(function () {
+        var vKataKunci = $("#idSearch").val();
+        $.ajax({
+            url: "/Meja/Search",
+            data: { key: vKataKunci },
+            type: "GET",
+            success: function (model) {
+                $("#idTableMeja").html(model);
+            },
+            error: function (model) {
+            }
+        });
+    });
+
+</script>
