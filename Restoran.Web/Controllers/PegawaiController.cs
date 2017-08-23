@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Restoran.Repo;
 using Restoran.ViewModel;
+using Restoran.Model;
 
 namespace Restoran.Web.Controllers
 {
@@ -42,9 +43,12 @@ namespace Restoran.Web.Controllers
 
         public ActionResult Create(MstPegawaiViewModel model)
         {
+            //DataSet dsID = Common.ExecuteDataSet("spoMaxIdPegawai");
+            //int intID = dsID.Tables[0].Rows[0].Field<int>("MaksimumID");
+            //model.ID = intID + 1;
             if (ModelState.IsValid)
             {
-                if (serviceRestoran.ceknamapegawai(model.NamaLengkap))
+                if (serviceRestoran.cekdatakodepegawai(model.KodePegawai))
                 {
                     return Json(new { Pesan = "Ada" }, JsonRequestBehavior.AllowGet);
                 }
@@ -81,5 +85,29 @@ namespace Restoran.Web.Controllers
             return View();
         }
 
+
+        public ActionResult Edit(int id)
+        {
+            var vPegawai = serviceRestoran.GetByID(id);
+            return PartialView("_Edit", vPegawai);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(MstPegawai model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (serviceRestoran.Edit(model))
+                {
+                    return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return View();
+        }
     }
 }

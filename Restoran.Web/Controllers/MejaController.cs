@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Restoran.Repo;
 using Restoran.ViewModel;
+using Restoran.Model;
 
 namespace Restoran.Web.Controllers
 {
@@ -77,6 +78,29 @@ namespace Restoran.Web.Controllers
         {            
             List<MstMejaViewModel> mstmejaviewmodel = serviceMeja.GetSearch(key);
             return PartialView("_ListMeja", mstmejaviewmodel);
+        }
+        public ActionResult Edit(int id)
+        {
+            var vMeja = serviceMeja.GetByID(id);
+            return PartialView("_Edit", vMeja);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(MstMeja model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (serviceMeja.Edit(model))
+                {
+                    return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return View();
         }
 	}
 }

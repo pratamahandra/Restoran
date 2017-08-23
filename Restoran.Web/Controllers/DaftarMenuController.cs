@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Restoran.Repo;
 using Restoran.ViewModel;
+using Restoran.Model;
 
 namespace Restoran.Web.Controllers
 {
@@ -75,6 +76,31 @@ namespace Restoran.Web.Controllers
         {
             List<MstDaftarMenuViewModel> mstdaftarmenunviewmodel = serviceDaftarMenu.GetSearch(key);
             return PartialView("_ListDaftarMenu", mstdaftarmenunviewmodel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var vDaftarMenu = serviceDaftarMenu.GetByID(id);
+            ViewBag.ListKategoriMenu = new SelectList(serviceKategoriMenu.GetAll(), "KodeKategoriMenu", "NamaKategoriMenu");
+            return PartialView("_Edit", vDaftarMenu);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(MstDaftarMenu model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (serviceDaftarMenu.Edit(model))
+                {
+                    return Json(new { Pesan = "Success" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { Pesan = "Gagal" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return View();
         }
 	}
 }

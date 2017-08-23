@@ -2,18 +2,18 @@
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "idFormKeanggotaan" }))
 {
-    @Html.AntiForgeryToken()
+    @*@Html.AntiForgeryToken()*@
 
     <div class="form-horizontal">
         <h4>MstKeanggotaanViewModel</h4>
         <hr />
-        @Html.ValidationSummary(true)
+        @*@Html.ValidationSummary(true)*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.KodeKeanggotaan, new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.EditorFor(model => model.KodeKeanggotaan, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
-                @Html.ValidationMessageFor(model => model.KodeKeanggotaan)
+                @*@Html.ValidationMessageFor(model => model.KodeKeanggotaan)*@
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <div class="col-md-8">
                 @*@Html.EditorFor(model => model.KodeTipeKeanggotaan)*@
                 @Html.DropDownListFor(model => model.KodeTipeKeanggotaan, (IEnumerable<SelectListItem>)ViewBag.ListTipeKeanggotaan, "Pilih Tipe", new { @class = "from-control" })
-                @Html.ValidationMessageFor(model => model.KodeTipeKeanggotaan)
+                @*@Html.ValidationMessageFor(model => model.KodeTipeKeanggotaan)*@
             </div>
         </div>
 
@@ -30,7 +30,7 @@
             @Html.LabelFor(model => model.NomerIdentitas, new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.EditorFor(model => model.NomerIdentitas, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NomerIdentitas)
+                @*@Html.ValidationMessageFor(model => model.NomerIdentitas)*@
             </div>
         </div>
 
@@ -38,7 +38,7 @@
             @Html.LabelFor(model => model.NamaLengkap, new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.EditorFor(model => model.NamaLengkap, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NamaLengkap)
+                @*@Html.ValidationMessageFor(model => model.NamaLengkap)*@
             </div>
         </div>
 
@@ -46,7 +46,7 @@
             @Html.LabelFor(model => model.Alamat, new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.EditorFor(model => model.Alamat, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Alamat)
+                @*@Html.ValidationMessageFor(model => model.Alamat)*@
             </div>
         </div>
 
@@ -54,7 +54,7 @@
             @Html.LabelFor(model => model.NomerHandphone, new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.EditorFor(model => model.NomerHandphone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NomerHandphone)
+                @*@Html.ValidationMessageFor(model => model.NomerHandphone)*@
             </div>
         </div>
 
@@ -62,11 +62,11 @@
             @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email)
+                @*@Html.ValidationMessageFor(model => model.Email)*@
             </div>
         </div>
     </div>
 }
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@

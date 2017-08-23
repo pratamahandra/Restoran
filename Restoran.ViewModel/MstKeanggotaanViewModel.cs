@@ -45,5 +45,7 @@ namespace Restoran.ViewModel
         [Column(TypeName = "Varchar")]
         [StringLength(10)]
         public string JenisKeanggotaan { get; set; }
+
+
     }
 }

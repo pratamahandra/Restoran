@@ -9,6 +9,9 @@
 <table class="table" id="idTableKeanggotaan">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.KodeKeanggotaan)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.KodeTipeKeanggotaan)
         </th>
         <th>
@@ -27,6 +30,9 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.KodeKeanggotaan)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.KodeTipeKeanggotaan)
             </td>
             <td>
@@ -39,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                <button type="button" class=" btn btn-success">
+                <button type="button" class=" btn btn-success editDataKeanggotaan" dataid=@item.ID>
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
                 <button type="button" class=" btn btn-info">
@@ -94,4 +100,23 @@
         });
     });
 
+
+    $(".editDataKeanggotaan").click(function () {
+        debugger;
+        var vIDKeanggotaan = $(this).attr("dataId");
+        $.ajax({
+            url: "/Keanggotaan/Edit",
+            data: { ID: vIDKeanggotaan },
+            type: "GET",
+            success: function (model) {
+                debugger;
+                $("#idModalBodyEditKeanggotaan").html(model);
+                $("#idModalEditKeanggotaan").modal("show");
+            },
+            error: function (model) {
+                debugger;
+
+            }
+        });
+    });
 </script>

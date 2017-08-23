@@ -36,7 +36,7 @@
                 @Html.DisplayFor(modelItem => item.status)
             </td>
             <td>
-                <button type="button" class=" btn btn-success">
+                <button type="button" class=" btn btn-success editDaftarMenu" dataid=@item.ID>
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
                 <button type="button" class=" btn btn-info">
@@ -85,6 +85,24 @@
                 $("#idTableDaftarMenu").html(model);                
             },
             error: function (model) {
+            }
+        });
+    });
+    $(".editDaftarMenu").click(function () {
+        debugger;
+        var vIDDaftarMenu = $(this).attr("dataId");
+        $.ajax({
+            url: "/DaftarMenu/Edit",
+            data: { ID: vIDDaftarMenu },
+            type: "GET",
+            success: function (model) {
+                debugger;
+                $("#idModalBodyEditDaftarMenu").html(model);
+                $("#idModalEditDaftarMenu").modal("show");
+            },
+            error: function (model) {
+                debugger;
+
             }
         });
     });

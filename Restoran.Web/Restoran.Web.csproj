@@ -1610,6 +1610,10 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\DaftarMenu\_Edit.cshtml" />
+    <Content Include="Views\Keanggotaan\_Edit.cshtml" />
+    <Content Include="Views\Meja\_Edit.cshtml" />
+    <Content Include="Views\Pegawai\_Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1622,6 +1626,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Restoran.Model\Restoran.Model.csproj">
+      <Project>{1aef998b-bff7-4022-86a0-def8ad6c140a}</Project>
+      <Name>Restoran.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Restoran.Repo\Restoran.Repo.csproj">
       <Project>{e979e6d2-ce20-4857-9bb8-bfca92c9c036}</Project>
       <Name>Restoran.Repo</Name>
